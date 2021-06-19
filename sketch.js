@@ -18,7 +18,7 @@ function display() {
   rotate(radians(random(cir)));
   noStroke();
   fill(random(150, 300), random(360), random(360), 0.5);
-  circle(70, 0, 30);
+  circle(width*.005, 0, width*.0025);
   pop();
 
   //wobbly lines
