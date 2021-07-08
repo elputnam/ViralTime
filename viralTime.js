@@ -20,8 +20,3 @@ function viralTime() {
   line(0, height - random(200), width, height - random(200));
     }
   }
-
-
-
-
-

@@ -1,38 +1,25 @@
-let start;
+let phrase = ['Time' ,'is' , 'glitchy'];
+let i;
+let link;
+let start; 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  colorMode(HSB);
-  frameRate(10);
-  link = createA('http://127.0.0.1:5501/SlidingScreens/');
-  start = createButton('Start').parent(link);
+  colorMode(HSB, 360, 100, 100, 100);
+  //frameRate(10);
+  i = 0;
+  link = createA('http://127.0.0.1:5501/SlidingScreens/','');
+  start = createButton('Start').parent(link); 
 }
 
 function draw() {
-  background(random(50), .4);
-  display();
-  if (frameCount >= 150){
+  if (frameCount < 500){
+    background(random(30), 10);
+    viralTime();
+  }
+
+  if (frameCount >= 500){
+    timeisGlitchy();
     start.position(width*.25, height*.75);
   }
 }
-
-function display() {
-  //glitch thob
-  let num = 20;
-  push();
-  translate(width / 2, height / 2);
-  let cir = (360 / num) * (frameCount % num);
-  rotate(radians(random(cir)));
-  noStroke();
-  fill(random(150, 300), random(360), random(360), 0.5);
-  circle(width*.1, 0, width*.07);
-  pop();
-
-  //wobbly lines
-  stroke(random(0, 100), 100, 360);
-  line(random(100), 0, random(100), height);
-  line(width - random(200), 0, width - random(200), height);
-  line(0, random(200), width, random(200));
-  line(0, height - random(200), width, height - random(200));
-}
-
