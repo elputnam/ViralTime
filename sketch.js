@@ -1,12 +1,19 @@
+let start;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  colorMode(HSB);
   frameRate(10);
+  link = createA('http://127.0.0.1:5501/SlidingScreens/');
+  start = createButton('Start').parent(link);
 }
 
 function draw() {
-  background(random(50), 0.4);
-  colorMode(HSB);
+  background(random(50), .4);
   display();
+  if (frameCount >= 150){
+    start.position(width*.25, height*.75);
+  }
 }
 
 function display() {
