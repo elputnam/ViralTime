@@ -6,11 +6,17 @@ let link1;
 let link2;
 let link3;
 
+let timeText;
+
+function preload() {
+  timeText = loadStrings('viralTime.txt');
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   //frameRate(10);
   i = 0;
+  j = 0;
   //link = createA('http://127.0.0.1:5501/SlidingScreens/','');
   link1 = createA('http://127.0.0.1:5501/PeatBramble/', '');
   link2 = createA('http://127.0.0.1:5501/GlibDive/', '');
@@ -31,10 +37,11 @@ function draw() {
     link = link3;
   }
 
-    if (frameCount < 500){
+    if (frameCount < 1500){
       background(random(30), 10);
       viralTime();
-    } else if (frameCount == 500){
+      viralTimeText();
+    } else if (frameCount == 1500){
       timeisGlitchy();
       start = createButton('Start').parent(link); 
       start.position(width*.25, height*.75);
