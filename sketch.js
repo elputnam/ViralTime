@@ -2,24 +2,43 @@ let phrase = ['Time' ,'is' , 'glitchy'];
 let i;
 let link;
 let start; 
+let link1;
+let link2;
+let link3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   //frameRate(10);
   i = 0;
-  link = createA('http://127.0.0.1:5501/SlidingScreens/','');
-  start = createButton('Start').parent(link); 
+  //link = createA('http://127.0.0.1:5501/SlidingScreens/','');
+  link1 = createA('http://127.0.0.1:5501/PeatBramble/', '');
+  link2 = createA('http://127.0.0.1:5501/GlibDive/', '');
+  link3 = createA('http://127.0.0.1:5501/AtTheEndOf/', '');
+  //start = createButton('Start').parent(link); 
 }
 
 function draw() {
-  if (frameCount < 500){
-    background(random(30), 10);
-    viralTime();
+  
+  let choice = int(random(0, 3));;  
+  if ( choice == 0){
+      link = link1;
+      }
+  if (choice == 1){
+      link = link2;
+    }  
+  if (choice == 3){
+    link = link3;
   }
 
-  if (frameCount >= 500){
-    timeisGlitchy();
-    start.position(width*.25, height*.75);
+    if (frameCount < 500){
+      background(random(30), 10);
+      viralTime();
+    } else if (frameCount == 500){
+      timeisGlitchy();
+      start = createButton('Start').parent(link); 
+      start.position(width*.25, height*.75);
+    } else {
+      timeisGlitchy();
+    }
   }
-}
