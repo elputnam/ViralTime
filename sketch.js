@@ -14,6 +14,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
+  frameRate(20);
   //frameRate(10);
   i = 0;
   j = 0;
@@ -37,10 +38,12 @@ function draw() {
     link = link3;
   }
 
+  if (frameCount > 150){
+    viralTimeText();
+  }
     if (frameCount < 1500){
       background(random(30), 10);
       viralTime();
-      viralTimeText();
     } else if (frameCount == 1500){
       timeisGlitchy();
       start = createButton('Start').parent(link); 

@@ -1,5 +1,5 @@
 function viralTimeText(){
-    if (frameCount%20==0 ){
+    if (frameCount%19==0 ){
     textSize(55);
     noStroke();
     fill(200);
