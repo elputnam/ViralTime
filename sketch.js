@@ -19,14 +19,14 @@ function setup() {
   i = 0;
   j = 0;
   //link = createA('http://127.0.0.1:5501/SlidingScreens/','');
-  link1 = createA('http://127.0.0.1:5501/PeatBramble/', '');
-  link2 = createA('http://127.0.0.1:5501/GlibDive/', '');
-  link3 = createA('http://127.0.0.1:5501/AtTheEndOf/', '');
+  //link1 = createA('http://127.0.0.1:5501/PeatBramble/', '');
+  //link2 = createA('http://127.0.0.1:5501/GlibDive/', '');
+  //link3 = createA('http://127.0.0.1:5501/AtTheEndOf/', '');
   //start = createButton('Start').parent(link); 
 }
 
 function draw() {
-  
+  /*
   let choice = int(random(0, 3));;  
   if ( choice == 0){
       link = link1;
@@ -37,17 +37,18 @@ function draw() {
   if (choice == 3){
     link = link3;
   }
-
+*/
   if (frameCount > 150){
     viralTimeText();
   }
     if (frameCount < 1500){
       background(random(30), 10);
       viralTime();
+      /*
     } else if (frameCount == 1500){
       timeisGlitchy();
       start = createButton('Start').parent(link); 
-      start.position(width*.25, height*.75);
+      start.position(width*.25, height*.75); */
     } else {
       timeisGlitchy();
     }
