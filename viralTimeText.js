@@ -4,7 +4,7 @@ function viralTimeText(){
     noStroke();
     fill(200);
     textFont('VT323');
-    text(timeText[j], width*.15, height*.75);
+    text(timeText[j], width*.05, height*.75);
     j += 1;
     }
 }
