@@ -27,8 +27,8 @@ function setup() {
 
 function draw() {
   
-  let choice = int(random(0, 3));;  
-  if ( choice == 0){
+  let choice = int(random(1, 3));;  
+  if ( choice == 1){
       link = link1;
       }
   if (choice == 1){
