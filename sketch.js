@@ -19,9 +19,9 @@ function setup() {
   i = 0;
   j = 0;
   //link = createA('http://127.0.0.1:5501/SlidingScreens/','');
-  link1 = createA('https://fleshcircuit.github.io/PeatBramble/', '');
-  link2 = createA('https://fleshcircuit.github.io/GlibDrive/', '');
-  link3 = createA('https://fleshcircuit.github.io/AtTheEndOf/', '');
+  link1 = createA('https://elputnam.github.io/PeatBramble/', '');
+  link2 = createA('https://elputnam.github.io/GlibDrive/', '');
+  link3 = createA('https://elputnam.github.io/AtTheEndOf/', '');
   //start = createButton('Start').parent(link); 
 }
 
