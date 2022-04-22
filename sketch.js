@@ -53,3 +53,7 @@ function draw() {
       timeisGlitchy();
     }
   }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
