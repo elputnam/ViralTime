@@ -26,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-  
+  console.log(frameCount);
   let choice = int(random(1, 3));;  
   if ( choice == 1){
       link = link1;
@@ -41,16 +41,17 @@ function draw() {
   if (frameCount > 150){
     viralTimeText();
   }
-    if (frameCount < 1500){
+
+  if (frameCount < 1500){
       background(random(30), 10);
       viralTime();
       
-    } else if (frameCount == 1500){
+  } else if (frameCount > 1500){
       timeisGlitchy();
-      start = createButton('Next').parent(link); 
-      start.position(width*.1, height*.75); 
-    } else {
-      timeisGlitchy();
+      //start = createButton('Next').parent(link); 
+      //start.position(width*.1, height*.75); 
+  } else if (frameCount >= 2500) {
+      frameCount = 0;
     }
   }
 
