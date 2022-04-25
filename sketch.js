@@ -18,42 +18,56 @@ function setup() {
   //frameRate(10);
   i = 0;
   j = 0;
-  //link = createA('http://127.0.0.1:5501/SlidingScreens/','');
-  link1 = createA('https://elputnam.github.io/PeatBramble/', '');
-  link2 = createA('https://elputnam.github.io/GlibDrive/', '');
-  link3 = createA('https://elputnam.github.io/AtTheEndOf/', '');
+  link = createA('http://127.0.0.1:5501/SlidingScreens/','');
+  //link1 = createA('https://elputnam.github.io/PeatBramble/', '');
+  //link2 = createA('https://elputnam.github.io/GlibDrive/', '');
+  // link3 = createA('https://elputnam.github.io/AtTheEndOf/', '');
   //start = createButton('Start').parent(link); 
 }
 
 function draw() {
-  
-  let choice = int(random(1, 3));;  
-  if ( choice == 1){
-      link = link1;
-      }
-  if (choice == 1){
-      link = link2;
-    }  
-  if (choice == 3){
-    link = link3;
-  }
+  console.log(frameCount);
+  // let choice = int(random(1, 3));;  
+  // if ( choice == 1){
+  //     link = link1;
+  //     }
+  // if (choice == 1){
+  //     link = link2;
+  //   }  
+  // if (choice == 3){
+  //   link = link3;
+  // }
 
-  if (frameCount > 150){
-    viralTimeText();
-  }
-    if (frameCount < 1500){
+  // if (frameCount > 150){
+  //   viralTimeText();
+  // }
+    if (frameCount < random(500,1500)){
       background(random(30), 10);
       viralTime();
       
-    } else if (frameCount == 1500){
-      timeisGlitchy();
-      start = createButton('Next').parent(link); 
-      start.position(width*.1, height*.75); 
+    // } else if (frameCount == 1500){
+    //   timeisGlitchy();
+      //start = createButton('Next').parent(link); 
+      //start.position(width*.1, height*.75); 
     } else {
       timeisGlitchy();
     }
+
+    if (frameCount == 3000){
+      reset();
+    }
+
+    if (frameCount == 100){
+      link
+    }
+  }
+
+  function reset(){
+    frameCount = 0;
   }
 
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
+
+  
