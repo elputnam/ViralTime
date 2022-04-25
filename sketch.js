@@ -51,6 +51,10 @@ function draw() {
       //start.position(width*.1, height*.75); 
     } else {
       timeisGlitchy();
+      //start = createButton('Next').parent(link); 
+      //start.position(width*.1, height*.75); 
+  } else if (frameCount >= 2500) {
+      frameCount = 0;
     }
 
     if (frameCount == 3000){
